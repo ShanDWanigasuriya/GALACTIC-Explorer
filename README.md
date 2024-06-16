@@ -23,13 +23,13 @@
 
 #### 1. Clone the repository:
 ```
-git clone https://github.com/sliitcsse/se3040-assignment02-IT21814242.git
+git clone https://github.com/ShanDWanigasuriya/GALACTIC-Explorer.git
 ```
 
 #### 2. Navigate to the project directory:
 ```
-cd galactic-explorer
-cd API
+cd Frontend
+cd Backend-API
 ```
 #### 3. Install dependencies:
 ```
@@ -53,4 +53,4 @@ npm test
 ```
 
 # Hosted Application
-The GALACTIC Explorer application is hosted at .
+The GALACTIC Explorer application is hosted at https://galactic-explorer-frontend.onrender.com

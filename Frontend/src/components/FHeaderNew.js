@@ -1,0 +1,42 @@
+import React from 'react';
+import nasaLogo from '../assets/NASA_logo.png';
+import { Link, useNavigate } from 'react-router-dom';
+import userIcon from "../assets/user.png";
+
+const FHeaderNew = () => {
+    const navigate = useNavigate();
+    const username = localStorage.getItem('name');
+
+    const handleFavoritesClick = () => {
+        navigate('/spaceCollection');
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        navigate('/');
+    };
+
+    return (
+        <header className="bg-gray-800 text-white py-6 fixed top-0 left-0 w-full z-10">
+            <div className="container mx-auto flex justify-between items-center px-4">
+                <div className="flex items-center">
+                    <Link to={{ pathname: "/"}} className="flex items-center">
+                        <img src={nasaLogo} alt="NASA Logo" className="h-12 mr-4" />
+                        <h1 className="text-3xl font-semibold">GALACTIC Explorer</h1>
+                    </Link>
+                </div>
+                <div className="flex items-center gap-4 ml-4">
+                    <span>
+                        <img src={userIcon} alt="User Icon" className="h-6 w-6" />
+                    </span>
+                    <span><b>Hello,{username}</b></span>
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleFavoritesClick}>Favourites</button>
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleLogout}>Logout</button>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default FHeaderNew;
